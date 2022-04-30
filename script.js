@@ -1,184 +1,144 @@
-
-//find the culprit
-alert( "I'm JavaScript!");
-
-//find the culprit and invoke alert
-
-alert("I'm invoked"); //apostrophe was wrong adn corrected.
-
-//explain the below code how it works
-alert("I'm JavaScript!");//INVOKES ALERT BOX WHITH I'm Javascript in it.
-alert('Hello') //INVOKES ALERT BOX WHITH Hello in it.
-alert(`Wor     
- ld`)                //Template literals used to write , alert box shows 
-                     //          Wor
-                    //            ld.
-alert(3 +
-1
-+ 2); // this is multiple line code and its working , addition is done.
-
-//Fix the below to alert Guvi geek
-let admin=9, fname=10.5; 
-fname = "Guvi";//reassignes string Guvi
-let lname = "geek"//assignes string Geek
-admin = fname+" "+lname; //concatenates fname and lname with gap inbetwwen
-alert( admin ); // "Guvi geek"
-
-// Fix the below to alert hello Guvi geek
-fname=10.5; 
-fname = "Guvi"; //REASSIGNS TO STRING Guvi
-lname = "geek"; //
-let name = fname+" "+lname;
-alert( `hello ${name}` );
-
-//Fix the below to alert sum of two numbers
-let a = prompt("First number?");
-let b = prompt("Second number?");
-alert(Number(a) + Number(b));   //Type casting or coersion to number datatype.
-
-// // If you run the below scritpt you will get “Code is Blasted”
-// // Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
-
-a = parseInt("2") > parseInt("12");  //typecasting from string to number
-//Don't touch below this
-if (a) {
-  console.log("Code is Blasted")  //when the numbers are string it returns true and the numbers are typecasted to return false. 
+//Day 6 TASK2
+// Find the culprits and nail them — debugging javascript loops
+// Write a code to print the numbers in the array
+// Output: 1234567891011
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 0; i < 11; i--) {    //i should be equal to 0 , and hence the loop starts from the zeroeth index of the array. and it ends with 10th index.
+ new_string += numsArr[i] ;
 }
-else
-{
-  console.log("Diffused") 
-}
+console.log(new_string);
 
-// //How to get the success in console.
-a = prompt("Enter a number?");
-a=false;   //reaassigning it to false
-//Don't modify any code below this
-if (a) {
- console.log( 'OMG it works for any number inc 0' );
+// Write a code to print the numbers in the array
+// Output: 1,2,3,4,5,6,7,8,9,10,11
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 0; i < 11; i++) {            // i should start from zero to print zeroeth index 
+ new_string += numsArr[i] + ",";         //COMA SHOULD BE IN DOUBLE QUOTES -- ","  
 }
-else
-{
- console.log( "Success" );
-}
+console.log(new_string);
 
-let value = prompt('How many runs you scored in this ball');
-if (value === 4) {
-      console.log("You hit a Four");
-} else if (value === 6) {
-      console.log("You hit a Six");
-} else {
-      console.log(`${value}`);   //writes the score when it not a four or six.
-}
 
-// // Fix the code to welcome the boss
-// // You cant change the value of the msg
-let message;
-if (null || 2 || undefined )
-{
-   message = "welcome boss";
-}
-else
-{
-   message = "Go away";    
-}
-  console.log(message);  //let cannot escape blocks sinceit is blockscope. and hence declared outside the block and assingned inside the blocks.
-
-   //fix the code to welcome the boss
-   
-let lock = 0;
-// //Dont change any code below this 
-if (null || lock || undefined )
-{
-  message = "Go away";
-}
-else
-{
- message = "welcome";
-}
-  console.log(message);
-
-  //Fix the code to welcome the boss
-lock = 0    //assigning zero will return false and else block is invoked.
-//Dont change any code below this
-if (lock && " " || undefined )
-{
-  message = "Go away";
-}
-else
-{
- message = "welcome";
-}
-console.log(message);
-
-// Change the code to print
-// 3
-// 2
-// 1
-//You can change only 2 characters
-let i = 3;
-while (i) {
-  console.log( i-- ); //predecrement operator is changed to post decrement operator.
-}
-
-//Change the code to print 1 to 10 in 4 lines
-i=1;
-while(i<=10){
-  console.log(i);
-  i++;  }
-
-  // Change the code to print even numbers
-  //You are allowed to modify only one character 
-for (let num = 2; num <= 20; num += 1) {
-  if(num%2==0)
-  {
-  console.log(num)
-  }
-}
-
-// Change the code to print all the gifts
-let gifts = ["teddy bear", "drone", "doll"];
-for (let i = 0; i < 3; i++) {
-  console.log(`Wrapped ${gifts[i]} and added a bow!`);
-}
-
-//Fix the code to disarm the bomb.
-let countdown = 100;
-while (countdown > 0) {
-  countdown--;
-  if(countdown == -1)        //-1 cannot be reached since loop is limited within 0.
-  {
-   console.log("bomb triggered");
-  }
-}
-
-// Whats the msg printed and why?
-var lemein = "0";
-var lemeout = 0;
-var msg = "";
-if (lemein) {
- msg += "hi";
+// Write a code to replace the array value — If the number is even, replace it with ‘even’.
+// Output:[ 1, “even”, 3, “even”, 5, “even”, 7, “even”, 9, “even”, … ]
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i] %2 == 0 )
+ {
+ numsArr[i] = "even"; //writing even number "even"
  }
-if (lemeout) {
- msg += "Hello";
 }
-console.log(msg); //only hi is printed since lemein is a string , condition returns true and first if condition is executed.
-//lemeout is zero and hence returns false.
+console.log(numsArr);
 
-// Whats the msg printed and why? Guess you answer before running it.
-var lemein = "0";
-var lemeout = 0;
-var msg = "";
-if (lemein) {
- msg += "hi";
+// Write a code to add all the numbers in the array
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ var sum=0;
+ sum += parseInt(numsArr[i]);
+}
+console.log(sum);
+
+// Write a code to add the even numbers only
+// Output: 30
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i <10; i++) {
+ if(numsArr[i]%2==0){
+ sum += numsArr[i];
+}
+}
+console.log(sum);
+
+// Write a code to add the even numbers and subract the odd numbers
+// Output: 94
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i]%2==0)
+ {
+ sum += numsArr[i];
  }
-if (lemeout) {
- msg += 'Hello';
+ else
+ {
+ sum -= numsArr[i];
+ }
 }
-console.log(msg); //only hi is printed since lemein is a string , condition returns true and first if condition is executed.
-//lemeout is zero and hence returns false.
+console.log(sum);
 
+// Write a code to print inner arrays
+// Output:
+// Array(5) [ 1, 2, 3, 4, 5 ]
+// Array(6) [ 6, 7, 8, 9, 10, 11 ]
+// Write a code to print inner arrays
+// Output:
+// Array(5) [ 1, 2, 3, 4, 5 ]
+// Array(6) [ 6, 7, 8, 9, 10, 11 ]
+var numsArr = [[1, 2, 3, 4, 5][ 6, 7, 8, 9, 10, 11]];
+for (var i = 0; i < numsArr.length; i++)
+ {
+ console.log( numsArr[i])
+}
 
+// Write a code to print elements in the inner arrays
+// Output: 1234567891011
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all="";
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
 
+// Write a code to replace the array value — If the index is even, replace it with ‘even’.
+// Output: [ [“even”, 2, “even”, 4, “even”], [6, “even”, 8, “even”, 10, …] ]
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+      if(j %2 == 0 )
+      {
+         inner_array[j] = "even";
+       }
+}
+console.log(numsArr);
+
+// Write a code to print elements in the inner arrays in reverse
+// Output: 11 10 9 8 7 6 5 4 3 2 1
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = numsArr.length-1; i >0; i--) {
+ var inner_array = numsArr[i];
+ for(var j = inner_array.length; j < 0 ;j-- )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
+
+// Write a code to add elements in the inner arrays based on odd or even values
+// Output:
+// 36
+// 30
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var sum_odd=0;
+var sum_even=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++ ){
+ if(inner_array[j]%2!=0)
+ {
+ sum_odd += parseIint(inner_array[j]);
+ }
+ else
+ {
+ sum_even += parseInt(inner_array[i]);
+ }
+}
+}
+console.log(sum_odd);
+console.log(sum_even);
 
 
   
